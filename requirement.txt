@@ -1,0 +1,11 @@
+Flask==2.3.3
+PyPDF2==3.0.1
+nltk==3.8.1
+
+
+
+pip install -r requirements.txt
+
+
+cd E:\.NET\Web\PPSystemAI
+python skill_extractor_api.py

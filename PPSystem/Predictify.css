@@ -1,0 +1,161 @@
+/* Predictify Unified Admin/User Styling */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.page-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-container {
+    flex: 1 1 350px;
+    max-width: 500px;
+    background-color: #FFFFD9;
+    border: 2px ridge #990033;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-container label {
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="password"],
+.form-container input[type="text"],
+.form-container select {
+    padding: 8px;
+    font-size: 12pt;
+}
+
+.submit-button {
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #0099FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    width: 200px;
+}
+
+.submit-button:hover {
+    background-color: #007acc;
+}
+
+.heading-image {
+    display: block;
+    margin: 0 auto 15px auto;
+    border: 2px solid #990033;
+    max-width: 100%;
+    height: auto;
+}
+
+.right-image {
+    flex: 1 1 500px;
+    max-width: 600px;
+    height: auto;
+    border: 3px solid #990033;
+}
+
+.validator {
+    color: red;
+    font-size: 10pt;
+}
+
+@media screen and (max-width: 992px) {
+    .right-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+.page-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.form-container {
+    flex: 1 1 400px;
+    max-width: 600px;
+    background-color: #FFFFD9;
+    border: 2px ridge #990033;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    padding: 8px;
+    font-size: 12pt;
+}
+
+.submit-button {
+    padding: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    background-color: #0099FF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    width: 200px;
+}
+
+.submit-button:hover {
+    background-color: #007acc;
+}
+
+.heading-image {
+    display: block;
+    margin: 0 auto 15px auto;
+    border: 2px solid #990033;
+    max-width: 100%;
+    height: auto;
+}
+
+.right-image {
+    flex: 1 1 500px;
+    max-width: 750px;
+    height: 750px;
+}
+
+@media screen and (max-width: 992px) {
+    .right-image {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}

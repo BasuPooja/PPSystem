@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="PPSystem.Admin" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Predictify</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .header-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #660033, #99004d);
+        }
+
+        .header-image {
+            background-image: url('../Image/Hearder (2).gif');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 180px;
+        }
+
+        .menu-container {
+            background-color: #660033;
+            display: flex;
+            justify-content: center;
+        }
+
+        .asp-menu, .asp-menu ul, .asp-menu li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .asp-menu {
+            font-size: 14pt;
+            font-weight: bold;
+            display: flex;
+        }
+
+        .asp-menu > li {
+            position: relative;
+        }
+
+        .asp-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .asp-menu a:hover {
+            background-color: #99004d;
+        }
+
+        .asp-menu li:hover > .dynamic {
+            display: block;
+        }
+
+        .asp-menu td {
+            padding: 10px 30px;
+        }
+
+        .asp-menu .level1 {
+            margin-right: 20px;
+        }
+
+        .asp-menu .dynamic a {
+            padding: 10px 15px;
+            font-size: 13pt;
+            background-color: #880044;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .asp-menu .dynamic a:hover {
+            background-color: #aa3366;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 70vh;
+            margin: 20px auto;
+        }
+
+        .footer {
+            background-color: #660033;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12pt;
+        }
+    </style>
+
+    <!-- ✅ Accessibility Fix Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fix invalid aria-haspopup values
+            document.querySelectorAll('[aria-haspopup]').forEach(el => {
+                el.setAttribute('aria-haspopup', 'true');
+            });
+
+            // Assign proper ARIA roles
+            const menu = document.getElementById('<%= AdminMenu.ClientID %>');
+            if (menu) {
+                menu.setAttribute('role', 'menubar');
+                menu.querySelectorAll('ul').forEach(ul => {
+                    ul.setAttribute('role', 'menu');
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Header -->
+        <div class="header">
+            <asp:Image ID="Image1" runat="server"
+                CssClass="header-image"
+                ImageUrl="~/Image/Hearder (2).gif"
+                AlternateText="Predictify Banner" />
+        </div>
+
+        <!-- Menu -->
+        <div class="menu-container">
+            <asp:Menu ID="AdminMenu" runat="server" Orientation="Horizontal"
+                StaticDisplayLevels="1"
+                StaticSubMenuIndent="0"
+                DynamicHorizontalOffset="0"
+                CssClass="asp-menu"
+                IncludeStyleBlock="false">
+                <Items>
+                     <asp:MenuItem NavigateUrl="~/AdminDashboard.aspx" Text="Dashboard" />
+                    <asp:MenuItem Text="Add">
+                        <asp:MenuItem NavigateUrl="~/AddPersonalityQuestion.aspx" Text="Personality Question" />
+                        <asp:MenuItem NavigateUrl="~/AddAptitudeQuestion.aspx" Text="Aptitude Question" />
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="Job Detail">
+                        <asp:MenuItem NavigateUrl="~/AddJobdetail.aspx" Text="Add Job Detail" />
+                        <asp:MenuItem NavigateUrl="~/PreferedCV.aspx" Text="Preferred CV's" />
+                        <asp:MenuItem NavigateUrl="~/Requirement.aspx" Text="Requirement Detail" />
+                    </asp:MenuItem>
+                    <asp:MenuItem Text="View">
+                        <asp:MenuItem NavigateUrl="~/ViewPersonalityQstn.aspx" Text="Personality Question" />
+                        <asp:MenuItem NavigateUrl="~/ViewApptitudeQstn.aspx" Text="Aptitude Question" />
+                        <asp:MenuItem NavigateUrl="~/ViewJobdetail.aspx" Text="Job Detail" />
+                        <asp:MenuItem NavigateUrl="~/ViewApplicant.aspx" Text="Applicant" />
+                        <asp:MenuItem NavigateUrl="~/ShortList_Applicant.aspx" Text="Shortlisted CV's" /> 
+                        <asp:MenuItem NavigateUrl="~/ViewContactForm.aspx" Text="Contact Form" />
+                        <asp:MenuItem NavigateUrl="~/ViewResult.aspx" Text="Result" />
+                    </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/About.aspx" Text="Logout" />
+                </Items>
+            </asp:Menu>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; This project belongs to MCA (2023–2025) Group-12, 2025
+        </div>
+
+    </form>
+</body>
+</html>

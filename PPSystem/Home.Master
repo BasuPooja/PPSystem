@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.Master.cs" Inherits="PPSystem.Home" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predictify - Personality Prediction System</title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+/*            background-color: #f9f9f9;*/
+        }
+
+        .header-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #660033, #99004d);
+        }
+
+        .header-image {
+            background-image: url('../Image/Hearder (2).gif'); /* adjust path as needed */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 180px; /* adjust height as needed */
+        }
+
+        /* Top Navigation Menu */
+        .menu-container {
+            background-color: #660033;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .asp-menu, .asp-menu ul, .asp-menu li {
+            list-style-type: none; /* remove bullet points */
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 70vh;
+            /*background-color: #fffaf5;*/ /* soft background only for content */
+            max-width: auto;
+            margin: 20px auto;
+            
+/*            border-radius: 8px;*/
+/*            box-shadow: 0 0 8px rgba(0,0,0,0.05);*/
+        }
+
+
+        .asp-menu {
+            color: white;
+            font-size: 14pt;
+            font-weight:bold;
+            text-align: left;
+        }
+
+        .asp-menu td {
+            padding: 10px 20px;
+        }
+
+        .asp-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .asp-menu a:hover {
+            background-color: #99004d;
+        }
+        .asp-menu td {
+            padding: 10px 30px; /* Increase horizontal padding */
+        }
+        
+        .asp-menu .level1 {
+            margin-right: 20px; /* add gap between top-level menu items */
+        }
+
+        /* Submenu styling */
+
+        .asp-menu .level1 a:hover {
+            background-color: #cc0066;
+        }
+
+        .content {
+            padding: 20px;
+            min-height: 70vh;
+        }
+
+        .footer {
+            background-color: #660033;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Header -->
+        <div class="header">
+            <asp:Image ID="Image1" runat="server"
+                CssClass="header-image"
+                ImageUrl="~/Image/Hearder (2).gif"
+                AlternateText="Predictify Header" />
+        </div>
+
+
+        <!-- Top Menu with your Sidebar Items -->
+        <div class="menu-container">
+            <asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal"
+                StaticDisplayLevels="1"
+                StaticSubMenuIndent="0"
+                DynamicHorizontalOffset="0"
+                CssClass="asp-menu"
+                Font-Bold="true"
+                Font-Size="14pt"
+                ForeColor="White"
+                IncludeStyleBlock="false">
+                <Items>
+                    <asp:MenuItem Text="Home" NavigateUrl="~/About.aspx" />
+                    <asp:MenuItem Text="User Login" NavigateUrl="~/UserLogin.aspx" />
+                    <asp:MenuItem Text="Admin Login" NavigateUrl="~/AdminLogin.aspx" />
+                    <asp:MenuItem Text="Contact Us" NavigateUrl="~/ContectUs.aspx" />
+                </Items>
+            </asp:Menu>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            &copy; This project belongs to MCA (2023-2025) Group-12, 2025
+        </div>
+
+    </form>
+</body>
+</html>
